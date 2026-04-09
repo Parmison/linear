@@ -21,4 +21,16 @@ m = num/den
 print(m)
 
 c = round(meany - m * meanx, 1)
-print(c) 
+print(c)
+
+from sklearn.linear_model import LinearRegression
+import numpy as np
+
+x = np.array([3,7,13,14,16]).reshape([-1,1])
+y = np.array([2,7,11,17,21]).reshape([-1,1])
+
+lin = LinearRegression().fit(x,y)
+m = lin.coef_
+c = lin.intercept_
+
+print(m,c)
